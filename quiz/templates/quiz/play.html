@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play QUiz</title>
+</head>
+<body>
+<button type="submit"><a href="{%url 'quiz1:quizscore' quiz.id%}">Quiz Score</a></button>
+
+<h1>{{request.user}}</h1>
+<h2>{{quiz.quiz_name}}</h2><br>
+<h2>Q.{{no}}</h2>
+<h3>Question:{{que.question}}</h3>
+<form method="post">
+    {%csrf_token%}
+    <label for="yo">Answer:</label>
+    <input type="text" id="yo" name="answer" required/>
+    <input type="submit" value="Submit">
+</form>
+{%if error%}
+{{error}}
+{%endif%}
+{{ans}}
+<button type="button"><a href="{%url 'quiz1:index'%}">End Quiz</a> </button>
+</body>
+</html>

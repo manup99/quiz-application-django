@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz COntent</title>
+</head>
+<body>
+<h1>{{quiz.quiz_name}}</h1><br>
+<h3>Q.{{num}}</h3><br>
+<form method="post">
+    {%csrf_token%}
+    <label id="yo">Question:</label>
+    <input id="yo" type="text" name="question">
+    <label id="yo1">Answer:</label>
+    <input id="yo1" type="text" name="answer">
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
